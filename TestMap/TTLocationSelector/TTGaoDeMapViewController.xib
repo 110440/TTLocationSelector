@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TTGaoDeMapViewController">
+            <connections>
+                <outlet property="fullNameLab" destination="yYz-9o-2CI" id="L2B-fE-4d7"/>
+                <outlet property="mapView" destination="4dT-cV-xbF" id="tBj-t7-o3X"/>
+                <outlet property="nameLab" destination="dIR-eE-2XY" id="wsE-PC-B6R"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4dT-cV-xbF" userLabel="mapView" customClass="MAMapView">
+                    <color key="backgroundColor" red="0.1819814891" green="0.69426733259999995" blue="0.53024792669999998" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZBS-TH-n8t" userLabel="bottomView">
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地点名字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIR-eE-2XY">
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zs9-8x-PJB">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="5Ej-wO-Nsv"/>
+                                <constraint firstAttribute="width" constant="50" id="yoV-hK-Gyv"/>
+                            </constraints>
+                            <state key="normal" title="Button" image="locationSharing_navigate_icon_new"/>
+                            <state key="highlighted" image="locationSharing_navigate_icon_HL_new"/>
+                            <connections>
+                                <action selector="onSharedButton:" destination="-1" eventType="touchUpInside" id="Smx-OJ-aN8"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地点详细" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYz-9o-2CI">
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="zs9-8x-PJB" firstAttribute="centerY" secondItem="ZBS-TH-n8t" secondAttribute="centerY" id="1i4-vc-xtn"/>
+                        <constraint firstItem="yYz-9o-2CI" firstAttribute="leading" secondItem="ZBS-TH-n8t" secondAttribute="leading" constant="15" id="F7j-Iz-ePR"/>
+                        <constraint firstItem="yYz-9o-2CI" firstAttribute="top" secondItem="dIR-eE-2XY" secondAttribute="bottom" constant="10" id="RtC-T9-oZ7"/>
+                        <constraint firstAttribute="bottom" secondItem="yYz-9o-2CI" secondAttribute="bottom" constant="15" id="T7o-pb-N2z"/>
+                        <constraint firstItem="dIR-eE-2XY" firstAttribute="leading" secondItem="yYz-9o-2CI" secondAttribute="leading" id="hDf-uU-mfc"/>
+                        <constraint firstAttribute="trailing" secondItem="zs9-8x-PJB" secondAttribute="trailing" constant="10" id="n9j-kb-sMI"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2z7-yW-cNV" userLabel="back">
+                    <state key="normal" backgroundImage="barbuttonicon_back_cube"/>
+                    <connections>
+                        <action selector="onBack:" destination="-1" eventType="touchUpInside" id="dIl-FM-tRU"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qn-gQ-jDq" userLabel="more">
+                    <state key="normal" backgroundImage="barbuttonicon_more_cube"/>
+                    <connections>
+                        <action selector="onMore:" destination="-1" eventType="touchUpInside" id="7Nu-P9-Xm0"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNz-Fq-eIo" userLabel="my">
+                    <state key="normal" backgroundImage="location_my_current"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="2Qn-gQ-jDq" firstAttribute="top" secondItem="4dT-cV-xbF" secondAttribute="top" constant="23" id="2Lz-1l-QdQ"/>
+                <constraint firstAttribute="bottom" secondItem="4dT-cV-xbF" secondAttribute="bottom" constant="90" id="99K-nn-gu2"/>
+                <constraint firstItem="2z7-yW-cNV" firstAttribute="top" secondItem="4dT-cV-xbF" secondAttribute="top" constant="23" id="J0X-0o-RiA"/>
+                <constraint firstAttribute="trailing" secondItem="4dT-cV-xbF" secondAttribute="trailing" id="KmA-Bi-erh"/>
+                <constraint firstItem="JNz-Fq-eIo" firstAttribute="trailing" secondItem="4dT-cV-xbF" secondAttribute="trailing" constant="-10" id="LoK-O7-fh4"/>
+                <constraint firstItem="ZBS-TH-n8t" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="No5-JV-3OJ"/>
+                <constraint firstItem="4dT-cV-xbF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aHB-pR-6rg"/>
+                <constraint firstItem="4dT-cV-xbF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dwX-YV-lKg"/>
+                <constraint firstItem="JNz-Fq-eIo" firstAttribute="bottom" secondItem="4dT-cV-xbF" secondAttribute="bottom" constant="-20" id="eq4-wp-zdc"/>
+                <constraint firstItem="ZBS-TH-n8t" firstAttribute="top" secondItem="4dT-cV-xbF" secondAttribute="bottom" id="ggg-qP-Ran"/>
+                <constraint firstAttribute="bottom" secondItem="ZBS-TH-n8t" secondAttribute="bottom" id="gtk-w8-Rlq"/>
+                <constraint firstItem="2Qn-gQ-jDq" firstAttribute="trailing" secondItem="4dT-cV-xbF" secondAttribute="trailing" constant="-13" id="ljP-ce-eDn"/>
+                <constraint firstAttribute="trailing" secondItem="ZBS-TH-n8t" secondAttribute="trailing" id="yOY-0T-6iv"/>
+                <constraint firstItem="2z7-yW-cNV" firstAttribute="leading" secondItem="4dT-cV-xbF" secondAttribute="leading" constant="14" id="yiI-Ng-Nx3"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="60.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="barbuttonicon_back_cube" width="30" height="30"/>
+        <image name="barbuttonicon_more_cube" width="30" height="30"/>
+        <image name="locationSharing_navigate_icon_HL_new" width="50" height="50"/>
+        <image name="locationSharing_navigate_icon_new" width="50" height="50"/>
+        <image name="location_my_current" width="50" height="50"/>
+    </resources>
+</document>
